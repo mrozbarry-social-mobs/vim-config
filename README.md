@@ -2,11 +2,13 @@
 
 ## Instructions
 
- 1. Ensure the nvim config directory exists: `mkdir -p $XDG_HOME/nvim`
- 2. Clone this repo into that: `git clone git@github.com:mrozbarry-social-mobs/vim-config.git $XDG_HOME/nvim`
- 3. Run setup
+ 1. Clone this repo into home directory: `cd ~ && git clone git@github.com:mrozbarry-social-mobs/vim-config.git`
+ 2. Run setup
     - For neovim: `./setup.nvim.sh`
     - For vim: `./setup.vim.sh`
+ 3. Source in your default config file
+    - For neovim: `~/.config/nvim/init.vim` should contain `source ~/vim-config/init.vim`
+    - For vim: `~/.vimrc` should contain `source ~/vim-config/vimrc`
 
 ## Goals
 
