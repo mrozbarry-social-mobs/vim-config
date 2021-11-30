@@ -3,7 +3,7 @@
 ## Instructions
 
  1. Clone this repo into home directory: `cd ~ && git clone git@github.com:mrozbarry-social-mobs/vim-config.git`
- 2. Run setup
+ 2. Run setup (also chmod +x on files)
     - For neovim: `./setup.nvim.sh`
     - For vim: `./setup.vim.sh`
  3. Source in your default config file
