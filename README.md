@@ -46,3 +46,7 @@ Key `sequence` can be combined from:
  - <leader> for leader key
 
 And `command` is anything that can be typed in normal mode. Typically these will start with `:` and end in `<CR>`. You can chain multiple together, separated by `<CR>`.
+
+Examples:
+
+ - `nnoremap <leader>d :Fern . -reveal=%<CR>` to open fern and reveal the path to the current opened file
