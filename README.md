@@ -16,7 +16,7 @@
  - [x] Set up the leader key (using `,`)
  - [x] Make it easier to reload the config
  - [x] Install a file browser
- - [ ] Configure a theme
+ - [x] Configure a theme
  - [ ] Upgrade status bar
  - [ ] Language server support (neovim only?)
    - neovim: https://github.com/neovim/nvim-lspconfig + https://github.com/williamboman/nvim-lsp-installer
@@ -24,7 +24,6 @@
  - [ ] ...others?
 
 ## Notes for key mapping
-
 
 {keymap type}map {key sequence} {command}
 
