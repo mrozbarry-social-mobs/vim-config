@@ -1,3 +1,4 @@
+set nocompatible
 " Plugins
 call plug#begin(stdpath('data') . '/plugged')
 
