@@ -1,0 +1,24 @@
+snippet @hyperapp "Full hyperapp boilerplate"
+import { app, h, text } from 'hyperapp';
+
+const initialState = {
+};
+
+app({
+	init: initialState,
+
+	view: (state) => h('div', {}, text('Hello from Hyperapp')),
+
+	subscriptions: (state) => [],
+
+	node: document.querySelector('#app'),
+});
+endsnippet
+
+snippet @haEffect "Hyperapp effect builder"
+export const ${1:effectName} = (props) => [
+	(dispatch, props) => {
+	},
+	props,
+];
+endsnippet

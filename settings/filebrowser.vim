@@ -1,3 +1,4 @@
+" Fern
 let g:fern#renderer = "nerdfont"
 
 augroup my-glyph-palette
