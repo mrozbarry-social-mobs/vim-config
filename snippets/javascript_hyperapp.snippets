@@ -16,9 +16,7 @@ app({
 endsnippet
 
 snippet @haEffect "Hyperapp effect builder"
-export const ${1:effectName} = (props) => [
-	(dispatch, props) => {
-	},
-	props,
-];
+const ${1:effectName}Fx = (dispatch, props) => {
+};
+export const $1 = (props) => [$1Fx, props];
 endsnippet
