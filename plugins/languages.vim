@@ -8,10 +8,10 @@ if has("nvim")
   Plug 'folke/lsp-colors.nvim'
   Plug 'jose-elias-alvarez/null-ls.nvim'
   Plug 'nvim-lua/plenary.nvim'
-  Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-  Plug 'ms-jpq/coq.artifacts'
-  Plug 'ms-jpq/coq.thirdparty'
-  Plug 'glepnir/lspsaga.nvim'
+  " Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+  " Plug 'ms-jpq/coq.artifacts'
+  " Plug 'ms-jpq/coq.thirdparty'
+  Plug 'tami5/lspsaga.nvim'
 else
   Plug 'prabirshrestha/vim-lsp'
   Plug 'mattn/vim-lsp-settings'

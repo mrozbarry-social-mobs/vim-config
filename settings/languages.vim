@@ -1,9 +1,6 @@
 if (has("nvim"))
-  let g:coq_settings = { 'auto_start': 'shut-up' }
   lua << EOF
-local nvim_lsp = require('lspconfig')
-local saga = require 'lspsaga'
-local coq = require "coq"
+local lspconfig = require('lspconfig')
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -22,7 +19,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  buf_set_keymap('n', '<C-p>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
   buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
   buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
   buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
@@ -42,13 +39,30 @@ end
 -- map buffer local keybindings when the language server attaches
 local servers = { 'tsserver' }
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup(require('coq').lsp_ensure_capabilities({
-      -- on_attach = my_custom_on_attach,
+  lspconfig[lsp].setup {
     on_attach = on_attach,
-  }))
+    flags = {
+      debounce_text_changes = 150,
+    }
+  }
 end
 
-saga.init_lsp_saga()
+
+-- lspconfig.efm.setup {
+--     root_dir = lspconfig.util.root_pattern("yarn.lock", "package-lock.json", "lerna.json", ".git"),
+--     init_options = {documentFormatting = true, codeAction = true},
+--     settings = {languages = languages, log_level = 1, log_file = '~/efm.log'},
+--     on_attach = on_attach
+-- }
+lspconfig.efm.setup {
+    init_options = {documentFormatting = true},
+    settings = {
+      rootMarkers = {".git/"},
+    },
+    filetypes = { 'javascript' }
+}
+
+require('lspsaga').init_lsp_saga()
 
 EOF
   nnoremap <silent><leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<CR>

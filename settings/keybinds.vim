@@ -23,3 +23,7 @@ EOF
   nnoremap <silent><leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<CR>
   vnoremap <silent><leader>ca :<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>
 endif
+
+nnoremap <silent><C-h> :FocusSplitLeft<CR>
+nnoremap <silent><C-l> :FocusSplitRight<CR>
+nnoremap <silent><C-j> :FocusSplitDown<CR>
