@@ -1,0 +1,13 @@
+snippet ava "Ava boilerplate"
+import test from 'ava';
+
+test('does a thing', (t) => {
+	${1:${VISUAL}}
+});
+endsnippet
+
+snippet test "Ava test"
+test('${0:${VISUAL}}', (t) => {
+	$1
+});
+endsnippet
