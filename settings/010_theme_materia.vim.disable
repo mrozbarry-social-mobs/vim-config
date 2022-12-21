@@ -1,0 +1,7 @@
+let g:material_style = "lighter"
+colorscheme material
+ 
+lua << EOF
+require('material').setup()
+EOF
+

@@ -17,7 +17,3 @@ endif
 if has("termguicolors")
   set termguicolors
 endif
-
-set background=dark
-" colorscheme challenger_deep
-colorscheme purify
