@@ -63,7 +63,7 @@ local on_attach = function(client, bufnr)
   buf_map(bufnr, 'n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>')
   buf_map(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>')
 
-  if client.resolved_capabilities.document_formatting then
+  if client.server_capabilities.document_formatting then
     vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
   end
 
@@ -73,8 +73,8 @@ end
 -- map buffer local keybindings when the language server attaches
 lspconfig.tsserver.setup {
   on_attach = function(client, bufnr)
-      client.resolved_capabilities.document_formatting = false
-      client.resolved_capabilities.document_range_formatting = false
+      client.server_capabilities.document_formatting = false
+      client.server_capabilities.document_range_formatting = false
       local ts_utils = require("nvim-lsp-ts-utils")
       ts_utils.setup({})
       ts_utils.setup_client(client)

@@ -27,3 +27,4 @@ endif
 nnoremap <silent><C-h> :FocusSplitLeft<CR>
 nnoremap <silent><C-l> :FocusSplitRight<CR>
 nnoremap <silent><C-j> :FocusSplitDown<CR>
+nnoremap <silent><C-k> :FocusSplitUp<CR>
